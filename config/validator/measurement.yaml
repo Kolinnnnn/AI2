@@ -1,0 +1,24 @@
+App\Entity\Measurement:
+  properties:
+    date:
+      - NotBlank: { groups: ['create', 'edit'] }
+    temperature:
+      - NotBlank: { groups: ['create', 'edit'] }
+      - Range:
+          min: -50
+          max: 50
+          groups: ['create', 'edit']
+    humidity:
+      - NotBlank: { groups: ['create', 'edit'] }
+      - Range:
+          min: 0
+          max: 100
+          groups: ['create', 'edit']
+    pressure:
+      - NotBlank: { groups: ['create', 'edit'] }
+      - Range:
+          min: 800
+          max: 1200
+          groups: ['create', 'edit']
+    location:
+      - NotBlank: { groups: ['create', 'edit'] }
