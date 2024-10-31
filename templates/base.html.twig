@@ -26,13 +26,24 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_location_index') }}">Location</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ path('app_measurement_index') }}">Measurement</a>
                 </li>
+            </ul>
+            <ul class="navbar-nav">
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login') }}">Login</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
