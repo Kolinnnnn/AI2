@@ -35,6 +35,11 @@ class Measurement
         return $this->id;
     }
 
+    public function getFahrenheit(): float
+    {
+        return ($this->getTemperature() * 9 / 5) + 32;
+    }
+
     public function getDate(): ?\DateTimeInterface
     {
         return $this->date;
